@@ -25,7 +25,7 @@
 
                 <tr>
                     <td><?php echo($row['titulo']) ?></td>
-                    <td>2</td>
+                    <td><?php echo($row['descripcion']) ?></td>
                     <td>
                         <a href="" class="btn btn-warning btn-sm">Editar</a>
                         <a href="" class="btn btn-danger btn-sm" onclick="">Eliminar</a>

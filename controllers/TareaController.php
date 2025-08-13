@@ -14,7 +14,7 @@
         }
 
         //mostrar todas las tareas
-        public function home(){
+        public function index(){
             $tareas = $this->TareaModel->leer();
             include 'views/home.php';
         }

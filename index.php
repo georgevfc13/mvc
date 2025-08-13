@@ -6,8 +6,8 @@
     $accion = isset($_GET['action']) ? $_GET['action'] : 'index';
 
     switch ($accion){
-        case 'index': 
-            $controller->home();
-            break;
+            default: 
+        $controller->index();
+        break;
     }
 ?>
