@@ -16,7 +16,7 @@
             </div>
             <div class="mb-3">
                 <label for="descripcion" class="form-label">Descripción</label>
-                <textarea class="form-control" id="descripcion" name="descripcion" rows="3">Texto</textarea>
+                <textarea class="form-control" id="descripcion" name="descripcion" rows="3"><?php echo $tarea["descripcion"]; ?></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Actualizar Tarea</button>
             <a href="index.php" class="btn btn-secondary">Cancelar</a>
