@@ -18,5 +18,25 @@
             $tareas = $this->TareaModel->leer();
             include 'views/home.php';
         }
+        //crear tarea
+        public function crear(){
+            include 'views/crear.php';
+        }
+
+        //guardar tarea
+
+        public function guardar(){
+            if ($_POST){
+                $titulo = $_POST['titulo'];
+                $descripcion = $_POST['descripcion'];
+
+                if ($this->TareaModel->crear($titulo, $descripcion)){
+                    header("Location: index.php");
+                } else {
+                    echo "Error al crear la tabla";
+                }
+            }
+        }
+
     }
 ?>

@@ -6,8 +6,14 @@
     $accion = isset($_GET['action']) ? $_GET['action'] : 'index';
 
     switch ($accion){
-            default: 
-        $controller->index();
-        break;
+        case 'crear':
+            $controller->crear();
+            break;
+        case 'guardar':
+            $controller->guardar();
+            break;
+        default:
+            $controller->index();
+            break;
     }
 ?>
