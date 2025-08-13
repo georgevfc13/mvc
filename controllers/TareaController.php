@@ -38,5 +38,18 @@
             }
         }
 
+        //moostrar la informacion en el formulario
+        public function editar(){
+            if (isset($_GET['id'])){
+                $id = $_GET['id'];
+                $tarea = $this->TareaModel->leerUno($id);
+                if ($tarea){
+                    include 'views/editar.php';
+                } else {
+                    echo "tarea no encontrada";
+                }
+            }
+        }
+
     }
 ?>

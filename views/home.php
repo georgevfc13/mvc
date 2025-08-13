@@ -9,7 +9,7 @@
     <div class="container mt-5">
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h1>Lista de Tareas</h1>
-            <a href="index.php?accion=crear" class="bt  n btn-primary">Crear Nueva Tarea</a>
+            <a href="index.php?accion=crear" class="btn btn-primary">Crear Nueva Tarea</a>
         </div>
         <table class="table table-bordered table-striped">
             <thead class="table-dark">
@@ -27,7 +27,7 @@
                     <td><?php echo($row['titulo']) ?></td>
                     <td><?php echo($row['descripcion']) ?></td>
                     <td>
-                        <a href="" class="btn btn-warning btn-sm">Editar</a>
+                        <a href="index.php?accion=editar&id=<?php echo $row['id']; ?>" class="btn btn-warning btn-sm">Editar</a>
                         <a href="" class="btn btn-danger btn-sm" onclick="">Eliminar</a>
                     </td>
                 </tr>

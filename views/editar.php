@@ -12,7 +12,7 @@
             <input type="hidden" name="id" value="">
             <div class="mb-3">
                 <label for="titulo" class="form-label">Título</label>
-                <input type="text" class="form-control" id="titulo" name="titulo" value="" required>
+                <input type="text" class="form-control" id="titulo" name="titulo" value="<?php echo $tarea["titulo"];?>" required>
             </div>
             <div class="mb-3">
                 <label for="descripcion" class="form-label">Descripción</label>
