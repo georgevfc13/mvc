@@ -10,7 +10,7 @@ class TareaModel {
 
     // Leer tareas
     public function leer(){
-        $query = "SELECT id, titulo, descripcion, fecha_creacion FROM " . $this->table_name . " ORDER BY fecha_creacion DESC";
+        $query = "SELECT id, titulo, descripcion, fecha_creacion FROM " . $this->table_name . " WHERE estado = 1 ORDER BY fecha_creacion DESC";
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
         return $stmt;
@@ -64,9 +64,9 @@ class TareaModel {
 
     //eliminar tarea
     public function eliminar($id){
-        $query = "DELETE FROM " . $this->table_name . " WHERE id = :id";
+        $query = "UPDATE " . $this->table_name . " SET estado = 0 WHERE id = ?";
         $stmt = $this->conn->prepare($query);
-        $stmt->bindParam(":id", $id);
+        $stmt->bindParam(1, $id);
 
         if($stmt->execute()){
             return true;
