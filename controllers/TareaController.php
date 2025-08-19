@@ -51,5 +51,33 @@
             }
         }
 
+        //actualizar tarea
+        public function actualizar(){
+            if ($_POST){
+                $id = $_POST['id'];
+                $titulo = $_POST['titulo'];
+                $descripcion = $_POST['descripcion'];
+                
+                if ($this->TareaModel->actualizar($id, $titulo, $descripcion)){
+                    header("location: index.php");
+                } else {
+                    echo "Error al actualizar la tarea";
+                }
+            }
+        }
+    
+        //eliminar tarea
+        public function eliminar(){
+            $id = $_GET['id'] ?? $_POST['id'] ?? null;
+            if ($id) {
+                if ($this->TareaModel->eliminar($id)){
+                    header("Location: index.php");
+                    exit();
+                } else {
+                    echo "Error al eliminar la tarea";
+                }
+            }
+        }
+    
     }
 ?>

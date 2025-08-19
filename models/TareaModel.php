@@ -47,5 +47,31 @@ class TareaModel {
         }
         return null;
     }
+
+    //actializar tarea
+    public function actualizar($id, $titulo, $descripcion){
+        $query = "UPDATE " . $this->table_name . " SET titulo = :titulo, descripcion = :descripcion WHERE id = :id";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(":titulo", $titulo);
+        $stmt->bindParam(":descripcion", $descripcion);
+        $stmt->bindParam(":id", $id);
+
+        if($stmt->execute()){
+            return true;
+        }
+        return false;
+    }
+
+    //eliminar tarea
+    public function eliminar($id){
+        $query = "DELETE FROM " . $this->table_name . " WHERE id = :id";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(":id", $id);
+
+        if($stmt->execute()){
+            return true;
+        }
+        return false;
+    }
 }
 ?>
